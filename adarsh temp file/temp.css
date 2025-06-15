@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+  transition: background 1s;
+}
+body.cold {
+  background: linear-gradient(120deg, #74ebd5 0%, #ACB6E5 100%);
+}
+body.moderate {
+  background: linear-gradient(120deg, #fceabb 0%, #f8b500 100%);
+}
+body.hot {
+  background: linear-gradient(120deg, #ff512f 0%, #dd2476 100%);
+}
+body.dark {
+  background: linear-gradient(120deg, #232526 0%, #414345 100%);
+}
+
+.container {
+  background: rgba(255,255,255,0.92);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+  padding: 36px 28px 28px 28px;
+  min-width: 340px;
+  max-width: 96vw;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: background 0.5s;
+}
+
+h2 {
+  margin-bottom: 18px;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+#themeToggle {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s;
+  z-index: 2;
+}
+body.dark #themeToggle { color: #ffe066; }
+
+.input-row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 18px;
+}
+#tempInput, #unitSelect {
+  padding: 9px 10px;
+  border: 1.5px solid #b0c4de;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  transition: border 0.3s;
+}
+#tempRange {
+  width: 100%;
+  accent-color: #36d1c4;
+}
+
+.result {
+  margin-top: 18px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #444;
+  min-height: 32px;
+  padding: 8px 0;
+  background: #f7fafc;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.mascot {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 0.5s;
+}
+.mascot.cold { filter: drop-shadow(0 0 8px #00bcd4); }
+.mascot.moderate { filter: drop-shadow(0 0 8px #ff6f61); }
+.mascot.hot { filter: drop-shadow(0 0 8px #ffd700); }
+
+@media (max-width: 500px) {
+  .container {
+    min-width: 90vw;
+    padding: 18px 2vw 18px 2vw;
+  }
+  .mascot {
+    width: 60px;
+    height: 60px;
+  }
+}
